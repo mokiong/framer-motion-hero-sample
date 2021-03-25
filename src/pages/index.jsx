@@ -25,7 +25,6 @@ const Index = () => {
           {["dog1", "dog2", "dog3", "dog4"].map((dog) => (
             <Link href={`/images/${dog}`}>
               <MotionBox
-                border="solid"
                 mr={4}
                 layoutId={dog}
                 variants={imageVariant}
