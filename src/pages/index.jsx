@@ -23,21 +23,23 @@ const Index = () => {
       <Flex direction="row" p={3}>
         <Flex mx="auto">
           {["dog1", "dog2", "dog3", "dog4"].map((dog) => (
-            <Link href={`/images/${dog}`}>
-              <MotionBox
-                mr={4}
-                layoutId={dog}
-                variants={imageVariant}
-                animate="animate"
-                whileHover="hover"
-              >
-                <Image
-                  src={`/images/${dog}` + ".jpg"}
-                  width={250}
-                  height={300}
-                />
-              </MotionBox>
-            </Link>
+            <AnimatePresence exitBeforeEnter>
+              <Link href={`/images/${dog}`}>
+                <MotionBox
+                  mr={4}
+                  layoutId={dog}
+                  variants={imageVariant}
+                  animate="animate"
+                  whileHover="hover"
+                >
+                  <Image
+                    src={`/images/${dog}` + ".jpg"}
+                    width={250}
+                    height={300}
+                  />
+                </MotionBox>
+              </Link>
+            </AnimatePresence>
           ))}
         </Flex>
       </Flex>
